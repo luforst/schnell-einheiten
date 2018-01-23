@@ -7,6 +7,12 @@
   <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
+<script type="text/javascript">
+function updateMathContent(s) {
+       var math = MathJax.Hub.getAllJax("mathdiv")[0];
+       MathJax.Hub.Queue(["Text", math, s]);
+};
+</script>
 </head>
 <body>
 
@@ -15,7 +21,7 @@
 	    <tr><th>Größe</th><th>Formelzeichen</th><th>Einheit / Wert</th></tr>
     </thead>
     <tbody>
-	    <tr><td id="Groesse1" onclick="this.firstChild.nodeValue = 'Erdbeschleunigung'">?</td><td id="FZ1" onclick="this.firstChild.nodeValue = 'g'">?</td><td id="Einheit1">\(9,81\frac{m}{s^2}\)</td></tr>
+	    <tr><td id="Groesse1" onclick="this.firstChild.nodeValue = 'Erdbeschleunigung'">?</td><td id="FZ1" onclick="this.firstChild.nodeValue = 'g'">?</td><td id="Einheit1" onlick="updateMathContent('g')">\(9,81\frac{m}{s^2}\)</td><td id="updateMathButton" onclick=updateMathContent('g')>Formelsatz laden<td></tr>
     </tbody>
 </table>
 
