@@ -28,12 +28,22 @@ function loadContent() {
 	alert(tmpContent.toString());
 };
 
-function toggleVisible(obj) {
+function toggleVisible(objID) {
+	var obj = document.getElementById(objID);
 	if (obj.style.visibility == "hidden") {
 		obj.style.visibility = "visible";
 	} else if (obj.style.visibility == "visible") {
 		obj.style.visibility = "hidden";
 	};
+/*
+	var pressedButton = "show" + "objID";
+	var objButton = document.getElementById(objButton);
+	if (obj.style.visibility == "hidden") {
+		obj.style.visibility = "visible";
+	} else if (obj.style.visibility == "visible") {
+		obj.style.visibility = "hidden";
+	};
+*/
 };
 </script>
 
@@ -51,11 +61,11 @@ th, td {
 	padding: 10px;
 	text-align: center;
 }
-
+/*
 .inhalt {
 	visibility: hidden;
 }
-
+*/
 button {
 	text-align: center;
 	font-weight: normal;
@@ -118,19 +128,20 @@ a:hover {
 
 <table id="einheitentabelle">
     <thead>
-	    <tr><th>Größe</th><th>Formelzeichen</th><th>Einheit / Wert</th></tr>
+	    <tr id="thead"><th>Größe</th><th>Formelzeichen</th><th>Einheit / Wert</th></tr>
     </thead>
     <tbody>
-	    <tr><td id="Groesse1" class="inhalt" style="width: 35%;" onclick="this.firstChild.nodeValue = 'Erdbeschleunigung'">?</td>
-		<td id="FZ1" class="inhalt" style="width: 30%;" onclick="this.firstChild.nodeValue = 'g'">?</td>
-		<td id="Einheit1" class="inhalt" style="width: 35%;" onlick="updateMathContent('g')">\(9,81\frac{m}{s^2}\)</td>
+	    <tr><td id="Groesse1" class="inhalt" style="width: 35%; visibility: hidden;" onclick="this.firstChild.nodeValue = 'Erdbeschleunigung'">?</td>
+		<td id="FZ1" class="inhalt" style="width: 30%; visibility: hidden;" onclick="this.firstChild.nodeValue = 'g'">?</td>
+		<td id="Einheit1" class="inhalt" style="width: 35%; visibility: hidden;" onlick="updateMathContent('g')">\(9,81\frac{m}{s^2}\)</td>
 	    </tr>
     </tbody>
 </table>
+
 <div id="buttons">
-<button class="refreshButton" id="showGroesse" style="width: 35%;" onclick="toggleVisible(this)">Größe anzeigen</button>
-<button class="refreshButton" id="showFZ" style="width: 30%;" onclick="toggleVisible(this)">Formelzeichen anzeigen</button>
-<button class="refreshButton" id="showEinheit" style="width: 35%;" onclick="toggleVisible(this)">Einheit bzw. Wert anzeigen</button>
+<button class="refreshButton" id="showGroesse1" style="width: 35%;" onclick="toggleVisible('Groesse1', this);">Größe anzeigen</button>
+<button class="refreshButton" id="showFZ1" style="width: 30%;" onclick="toggleVisible('FZ1', this);">Formelzeichen anzeigen</button>
+<button class="refreshButton" id="showEinheit1" style="width: 35%;" onclick="toggleVisible('Einheit1', this);">Einheit bzw. Wert anzeigen</button>
 <button class="loadButton" onclick="loadContent()">neu laden</button>
 </div>
 
