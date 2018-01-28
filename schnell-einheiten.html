@@ -27,6 +27,14 @@ function loadContent() {
 	tmpContent = contentdb[randIndex];
 	alert(tmpContent.toString());
 };
+
+function toggleVisible(obj) {
+	if (obj.style.visibility == "hidden") {
+		obj.style.visibility = "visible";
+	} else if (obj.style.visibility == "visible") {
+		obj.style.visibility = "hidden";
+	};
+};
 </script>
 
 <style>
@@ -42,6 +50,10 @@ body {
 th, td {
 	padding: 10px;
 	text-align: center;
+}
+
+.inhalt {
+	visibility: hidden;
 }
 
 button {
@@ -109,20 +121,20 @@ a:hover {
 	    <tr><th>Größe</th><th>Formelzeichen</th><th>Einheit / Wert</th></tr>
     </thead>
     <tbody>
-	    <tr><td id="Groesse1" class="" style="width: 35%;" onclick="this.firstChild.nodeValue = 'Erdbeschleunigung'">?</td>
-		<td id="FZ1" class="" style="width: 30%;" onclick="this.firstChild.nodeValue = 'g'">?</td>
-		<td id="Einheit1" class="" style="width: 35%;" onlick="updateMathContent('g')">\(9,81\frac{m}{s^2}\)</td>
+	    <tr><td id="Groesse1" class="inhalt" style="width: 35%;" onclick="this.firstChild.nodeValue = 'Erdbeschleunigung'">?</td>
+		<td id="FZ1" class="inhalt" style="width: 30%;" onclick="this.firstChild.nodeValue = 'g'">?</td>
+		<td id="Einheit1" class="inhalt" style="width: 35%;" onlick="updateMathContent('g')">\(9,81\frac{m}{s^2}\)</td>
 	    </tr>
     </tbody>
 </table>
 <div id="buttons">
-<button class="refreshButton" id="updateMathButton" style="width: 35%;" onclick=updateMathContent('g')>Größe anzeigen</button>
-<button class="refreshButton" id="updateMathButton" style="width: 30%;" onclick=updateMathContent('g')>Formelzeichen anzeigen</button>
-<button class="refreshButton" id="refreshMath" style="width: 35%;" onclick=updateMathContent('g')>Einheit bzw. Wert anzeigen</button>
+<button class="refreshButton" id="showGroesse" style="width: 35%;" onclick="toggleVisible(this)">Größe anzeigen</button>
+<button class="refreshButton" id="showFZ" style="width: 30%;" onclick="toggleVisible(this)">Formelzeichen anzeigen</button>
+<button class="refreshButton" id="showEinheit" style="width: 35%;" onclick="toggleVisible(this)">Einheit bzw. Wert anzeigen</button>
 <button class="loadButton" onclick="loadContent()">neu laden</button>
 </div>
 
-<footer style="align: left;">&copy; 2018 by <a href="https://github.com/luforst">Lukas Forst</a>. Nutzung unter den Bedingungen der <a href="https://opensource.org/licenses/mit-license.php">MIT-Lizenz</a>.</footer>
+<footer style="align: left;">&copy; 2018 by <a href="https://github.com/luforst">Lukas Forst</a>. Nutzung unter den Bedingungen der <a href="https://opensource.org/licenses/mit-license.php">MIT-Lizenz.</a></footer>
 
 </body>
 </html>
