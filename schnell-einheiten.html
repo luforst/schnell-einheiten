@@ -1,29 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Einheiten-Test</title>
-  <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Einheiten-Test</title>
+	<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
 <script type="text/javascript">
 function updateMathContent(s) {
        var math = MathJax.Hub.getAllJax("mathdiv")[0];
        MathJax.Hub.Queue(["Text", math, s]);
 };
+
+function loadContent() {
+	alert("loadContent function has been called");
+};
 </script>
+<style>
+#einheitentabelle {
+	width: 100%;
+	font-family: sans-serif;
+}
+
+th, td {
+	padding: 10px;
+	text-align: center;
+}
+
+.button {
+	font-family: sans-serif;
+	text-align: center;
+	font-weight: normal;
+	background-color: white;
+	border: 1px solid #008CBA;
+	padding: 20px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+}
+
+.button:hover {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	background-color: #008CBA;;/*#4CAF50; /* Green */
+	color: white;
+}
+</style>
 </head>
 <body>
 
-<table>
+<table id="einheitentabelle">
     <thead>
 	    <tr><th>Größe</th><th>Formelzeichen</th><th>Einheit / Wert</th></tr>
     </thead>
     <tbody>
-	    <tr><td id="Groesse1" onclick="this.firstChild.nodeValue = 'Erdbeschleunigung'">?</td><td id="FZ1" onclick="this.firstChild.nodeValue = 'g'">?</td><td id="Einheit1" onlick="updateMathContent('g')">\(9,81\frac{m}{s^2}\)</td><td id="updateMathButton" onclick=updateMathContent('g')>Formelsatz laden<td></tr>
+	    <tr><td id="Groesse1" onclick="this.firstChild.nodeValue = 'Erdbeschleunigung'">?</td>
+		<td id="FZ1" onclick="this.firstChild.nodeValue = 'g'">?</td>
+		<td id="Einheit1" onlick="updateMathContent('g')">\(9,81\frac{m}{s^2}\)</td>
+	    </tr>
+	    <tr><td /><td /><td class="button" id="updateMathButton" onclick=updateMathContent('g')>Formelsatz laden<td></tr>
     </tbody>
 </table>
+
+<button class="button" onclick="loadContent()">neuen Inhalt laden</button>
 
 </body>
 </html>
