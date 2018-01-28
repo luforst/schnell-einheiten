@@ -28,22 +28,46 @@ function loadContent() {
 	alert(tmpContent.toString());
 };
 
-function toggleVisible(objID) {
+function toggleVisible(objID, caller) {
 	var obj = document.getElementById(objID);
+	var visible;
+
 	if (obj.style.visibility == "hidden") {
 		obj.style.visibility = "visible";
+		visible = 1;
 	} else if (obj.style.visibility == "visible") {
 		obj.style.visibility = "hidden";
+		visible = 0;
 	};
-/*
-	var pressedButton = "show" + "objID";
-	var objButton = document.getElementById(objButton);
-	if (obj.style.visibility == "hidden") {
-		obj.style.visibility = "visible";
-	} else if (obj.style.visibility == "visible") {
-		obj.style.visibility = "hidden";
+
+	if (caller=="func") {
+		return 0;
+	}
+
+	switch(caller.id) {
+		case "Groesse1":
+			if (visible) {
+				caller.innerHTML = "Größe verstecken";
+			} else {
+				caller.innerHTML = "Größe anzeigen";
+			};
+			break;
+		case "FZ1":
+			if (visible) {
+				caller.innerHTML = "Formelzeichen verstecken";
+			} else {
+				caller.innerHTML = "Formelzeichen anzeigen";
+			};
+			break;
+		case "Einheit1":
+			if (visible) {
+				caller.innerHTML = "Einheit verstecken";
+			} else {
+				caller.innerHTML = "Einheit anzeigen";
+			};
+			break;
 	};
-*/
+	return 0;
 };
 </script>
 
