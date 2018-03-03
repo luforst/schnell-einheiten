@@ -176,6 +176,51 @@ a:hover {
 <button class="refreshButton" id="showEinheit1" style="width: 35%;" onclick="toggleVisible('Einheit1', this);">Einheit bzw. Wert anzeigen</button>
 <button class="loadButton" onclick="loadContent()">neue Inhalte laden</button>
 </div>
+<!--
+<select name="subjects" size=7 multiple>
+	<option value="basicSI">SI-Basiseinheiten</option>
+	<option value="thermodyn">Wärmelehre</option>
+	<option value="mechanics">Mechanik</option>
+	<option value="electrics">Elektrizitätslehre</option>
+	<option value="nuclear">Atom- und Kernphysik</option>
+	<option value="acoustics">Akustik</option>
+	<option value="optics">Optik</option>
+</select>
+-->
+
+<form>
+	<fieldset>
+		<legend>Themenbereiche auswählen</legend>
+		<div>
+			<input type="checkbox" id="basicSI" name="branch" value="basicSI">
+			<label for="basicSI">SI-Basiseinheiten</label>
+		</div>
+		<div>
+			<input type="checkbox" id="thermodyn" name="branch" value="thermodyn">
+			<label for="thermodyn">Wärmelehre</label>
+		</div>
+		<div>
+			<input type="checkbox" id="mechanics" name="branch" value="mechanics">
+			<label for="mechanics">Mechanik</label>
+		</div>
+		<div>
+			<input type="checkbox" id="electrics" name="branch" value="electrics">
+			<label for="electrics">Elektrizitätslehre</label>
+		</div>
+		<div>
+			<input type="checkbox" id="nuclear" name="branch" value="nuclear">
+			<label for="nuclear">Atom- und Kernphysik</label>
+		</div>
+		<div>
+			<input type="checkbox" id="acoustics" name="branch" value="acoustics">
+			<label for="acoustics">Akustik</label>
+		</div>
+		<div>
+			<input type="checkbox" id="optics" name="branch" value="optics">
+			<label for="optics">Optik</label>
+		</div>
+	</fieldset>
+</form>
 
 <footer style="align: left;">&copy; 2018 by <a href="https://github.com/luforst">Lukas Forst</a>. Nutzung unter den Bedingungen der <a href="https://opensource.org/licenses/mit-license.php">MIT-Lizenz</a>. Der Quellcode ist auf <a href="https://github.com/luforst/schnell-einheiten">GitHub</a> zur Verfügung gestellt.&#x1f332;</footer>
 
