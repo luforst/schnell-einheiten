@@ -9,6 +9,8 @@
 	<script type="text/javascript" src="contentdb.js">
 	</script>
 <script type="text/javascript">
+var contentdb;
+
 function getRandom(min, max) { // Snippet von developer.mozilla.org
 	min = Math.ceil(min);
 	max = Math.floor(max);
@@ -77,6 +79,17 @@ function toggleVisible(objID, caller, doHide=0) {
 	};
 	return 0;
 };
+
+function updateContentDB() {
+	contentdb = [];
+	var gebiete = ["basicSI", "thermodyn", "mechanics", "electrics", "nuclear", "acoustics", "optics"];
+	for (i = 0; i < gebiete.length; i++) {
+		var bereichsCheckbox = document.getElementById(gebiete[i]);
+		if (bereichsCheckbox.checked) {
+			contentdb = contentdb.concat(contentSource[gebiete[i]]);
+		};
+	};
+};
 </script>
 
 <style>
@@ -134,6 +147,10 @@ button {
 	color: white;
 }
 
+#themenbereich {
+	float: right;
+}
+
 footer {
 	position: fixed;
 	left: 0;
@@ -188,7 +205,7 @@ a:hover {
 </select>
 -->
 
-<form>
+<form id="themenbereich">
 	<fieldset>
 		<legend>Themenbereiche auswählen</legend>
 		<div>
