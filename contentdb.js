@@ -29,7 +29,7 @@ const mechanics = [
 		["Druck", "p", "1 \\frac{N}{m^2} = 1 Pa \\textrm{(Pascal)}"],
 		["Dichte", "&rho;", "1 \\frac{kg}{m^3}"],
 		["Federkonstante", "D", "1 \\frac{N}{m}"],
-		["Reibungskoeffizient", "&mu;", "1 \\textrm{(dimensionslose Dezimalzahl)}
+		["Reibungskoeffizient", "&mu;", "1 \\textrm{(dimensionslose Dezimalzahl)}"]
 		];
 
 const electrics = [
