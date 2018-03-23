@@ -86,7 +86,7 @@ function updateContentDB() {
 	for (i = 0; i < gebiete.length; i++) {
 		var bereichsCheckbox = document.getElementById(gebiete[i]);
 		if (bereichsCheckbox.checked) {
-			contentdb = contentdb.concat(contentSource[gebiete[i]]);
+			contentdb = contentdb.concat(eval(gebiete[i]));
 		};
 	};
 };
