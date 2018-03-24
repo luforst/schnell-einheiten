@@ -46,6 +46,9 @@ const nuclear = [
 		["Energiedosis", "D", "1 Gy \\, \\textrm{(Gray)}"],
 		["Äquivalentdosis", "H", "1 Sv \\, \\textrm{(Sievert)}"],
 		["Ionendosis", "J", "1 \\frac{A \\cdot s}{kg} = 1 \\frac{Q}{kg} = 1 R \\, \\textrm{(Röntgen)}"],
+		["Ordnungs-, Kernladungs- oder Protonenzahl", "Z", "1 \\, \\textrm{dimensionslose Anzahl}"],
+		["Neutronenzahl", "N", "1 \\, \\textrm{dimensionslose Anzahl}"],
+		["Nukleonenzahl, Massenzahl", "A", "1 \\, \\textrm{dimensionslose Anzahl}"]
 		];
 
 const acoustics = [
