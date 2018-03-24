@@ -9,6 +9,8 @@
 	<script type="text/javascript" src="contentdb.js">
 	</script>
 <script type="text/javascript">
+var contentdb;
+
 function getRandom(min, max) { // Snippet von developer.mozilla.org
 	min = Math.ceil(min);
 	max = Math.floor(max);
@@ -77,6 +79,17 @@ function toggleVisible(objID, caller, doHide=0) {
 	};
 	return 0;
 };
+
+function updateContentDB() {
+	contentdb = [];
+	var gebiete = ["basicSI", "thermodyn", "mechanics", "electrics", "nuclear", "acoustics", "optics"];
+	for (i = 0; i < gebiete.length; i++) {
+		var bereichsCheckbox = document.getElementById(gebiete[i]);
+		if (bereichsCheckbox.checked) {
+			contentdb = contentdb.concat(eval(gebiete[i]));
+		};
+	};
+};
 </script>
 
 <style>
@@ -134,6 +147,10 @@ button {
 	color: white;
 }
 
+#themenbereich {
+	float: right;
+}
+
 footer {
 	position: fixed;
 	left: 0;
@@ -176,6 +193,51 @@ a:hover {
 <button class="refreshButton" id="showEinheit1" style="width: 35%;" onclick="toggleVisible('Einheit1', this);">Einheit bzw. Wert anzeigen</button>
 <button class="loadButton" onclick="loadContent()">neue Inhalte laden</button>
 </div>
+<!--
+<select name="subjects" size=7 multiple>
+	<option value="basicSI">SI-Basiseinheiten</option>
+	<option value="thermodyn">Wärmelehre</option>
+	<option value="mechanics">Mechanik</option>
+	<option value="electrics">Elektrizitätslehre</option>
+	<option value="nuclear">Atom- und Kernphysik</option>
+	<option value="acoustics">Akustik</option>
+	<option value="optics">Optik</option>
+</select>
+-->
+
+<form id="themenbereich">
+	<fieldset>
+		<legend>Themenbereiche auswählen</legend>
+		<div>
+			<input type="checkbox" id="basicSI" name="branch" value="basicSI" onchange="updateContentDB()">
+			<label for="basicSI">SI-Basiseinheiten</label>
+		</div>
+		<div>
+			<input type="checkbox" id="thermodyn" name="branch" value="thermodyn" onchange="updateContentDB()">
+			<label for="thermodyn">Wärmelehre</label>
+		</div>
+		<div>
+			<input type="checkbox" id="mechanics" name="branch" value="mechanics" onchange="updateContentDB()">
+			<label for="mechanics">Mechanik</label>
+		</div>
+		<div>
+			<input type="checkbox" id="electrics" name="branch" value="electrics" onchange="updateContentDB()">
+			<label for="electrics">Elektrizitätslehre</label>
+		</div>
+		<div>
+			<input type="checkbox" id="nuclear" name="branch" value="nuclear" onchange="updateContentDB()">
+			<label for="nuclear">Atom- und Kernphysik</label>
+		</div>
+		<div>
+			<input type="checkbox" id="acoustics" name="branch" value="acoustics" onchange="updateContentDB()">
+			<label for="acoustics">Akustik</label>
+		</div>
+		<div>
+			<input type="checkbox" id="optics" name="branch" value="optics" onchange="updateContentDB()">
+			<label for="optics">Optik</label>
+		</div>
+	</fieldset>
+</form>
 
 <footer style="align: left;">&copy; 2018 by <a href="https://github.com/luforst">Lukas Forst</a>. Nutzung unter den Bedingungen der <a href="https://opensource.org/licenses/mit-license.php">MIT-Lizenz</a>. Der Quellcode ist auf <a href="https://github.com/luforst/schnell-einheiten">GitHub</a> zur Verfügung gestellt.&#x1f332;</footer>
 
