@@ -17,23 +17,23 @@ const thermodynamics = [
 		["Wärme", "Q", "1 J \\textrm{(Joule)}"],
 		["spezifische Wärmekapazität", "c", "1 \\frac{J}{kg \\cdot K}"],
 		["Arbeit", "&Delta;E, W", "1 1 J \\textrm{(Joule)}"],
-		["Wirkungsgrad", "&eta;", "1 = 100% \\textrm{(dimensionslose Dezimalzahl < 1)"]
+		["Wirkungsgrad", "&eta;", "1 = 100% \\, \\textrm{(dimensionslose Dezimalzahl < 1)"]
 		];
 
 const mechanics = [
 		["Geschwindigkeit", "v", "1 \\frac{m}{s}"],
 		["Impuls", "\\vec{p}", "\\frac{kg \\cdot m}{s}"],
-		["Kraft", "F", "1 N \\textrm{(Newton)}"],
+		["Kraft", "F", "1 N \\, \\textrm{(Newton)}"],
 		["Erd- / Fallbeschleunigung", "g", "9,81\\frac{m}{s^2} = 9,81 \\frac{N}{kg}"],
 		["Beschleunigung", "a", "1 \\frac{m}{s^2}"],
-		["Druck", "p", "1 \\frac{N}{m^2} = 1 Pa \\textrm{(Pascal)}"],
+		["Druck", "p", "1 \\frac{N}{m^2} = 1 Pa \\, \\textrm{(Pascal)}"],
 		["Dichte", "&rho;", "1 \\frac{kg}{m^3}"],
 		["Federkonstante", "D", "1 \\frac{N}{m}"],
-		["Reibungskoeffizient", "&mu;", "1 \\textrm{(dimensionslose Dezimalzahl)}"]
+		["Reibungskoeffizient", "&mu;", "1 \\, \\textrm{(dimensionslose Dezimalzahl)}"]
 		];
 
 const electrics = [
-		["el. Stromstärke", "I", "1 A \\textrm{(Ampere)}"],
+		["el. Stromstärke", "I", "1 A \\, \\textrm{(Ampere)}"],
 		["el. Widerstand", "R", "1 \\Omega \\textrm{(Ohm)}"],
 		["el. Spannung", "U", "1 V \\textrm{(Volt)}"],
 		["el. Potential", "&Phi;, &phi;, &#981;", "1 V \\textrm{(Volt)}"],
