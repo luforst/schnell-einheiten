@@ -41,7 +41,7 @@ LaTeX-Befehle können im String "Einheit/Wert" verwendet werden.
 
 Damit eine Lücke zwischen dem Einheitensymbol und einer eventuellen Angabe des ausgeschriebenen Einheitennamens entsteht, ist
 ```javascript
-\\\\,
+\\,
 ```
 einzugeben, was dem LaTeX-Befehl \\, entspricht.
 
