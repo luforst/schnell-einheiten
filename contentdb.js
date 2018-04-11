@@ -1,3 +1,6 @@
+const topicList = ["SI-Basiseinheiten", "Wärmelehre", "Mechanik", "Elektrizitätslehre", "Atom- und Kernphysik", "Akustik", "Optik"];
+const arrayList = ["basicSI", "thermodyn", "mechanics", "electrics", "nuclear", "acoustics", "optics"];
+
 const basicSI = [
 		["Zeit", "t", "1 s \\, \\textrm{(Sekunde)}"],
 		["Masse", "m", "1 kg \\, \\textrm{(Kilogramm)}"],
@@ -9,7 +12,7 @@ const basicSI = [
 		["Lichtgeschwindigkeit", "c<sub>0</sub>", "299.792.458 \\frac{m}{s} \\approx 300.000 \\frac{km}{s}"],
 		];
 
-const thermodynamics = [
+const thermodyn = [
 		["absolute Temperatur", "T", "1 K \\, \\textrm{(Kelvin)}"],
 		["Celsius-Temperatur", "&theta;, &#977;", "1 °C \\, \\textrm{(Grad Celsius)}"],
 		["Leistung, Energiestrom", "P", "1 \\frac{J}{s} = 1 V \\cdot A = 1 W \\textrm{(Watt)}"],
@@ -65,3 +68,12 @@ const optics = [
 		["Gegenstandsweite", "g", "1 m"],
 		["Wellenlänge", "&lambda;", "1 m"]
 		];
+
+/* NACHFOLGENDEN ABSCHNITT NICHT ÄNDERN! 
+ * DO NOT ALTER HE FOLLOWING PART!
+ */
+
+if (topicList!=arrayList) {
+	alert("Fehler: topicList und arrayList haben verschieden viele Elemente!\nBitte contentdb.js prüfen!");
+	document.write("<h1>Fehler</h1>topicList und arrayList haben verschieden viele Elemente!<br />Bitte contentdb.js prüfen!");
+}
