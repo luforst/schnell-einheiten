@@ -47,7 +47,7 @@ einzugeben, was dem LaTeX-Befehl \\, entspricht.
 
 ## Anpassung der Themengebiete
 
-Die Anzeigenamen der Themengebiete und die Zuordnung zu ihren jeweiligen Arrays erfolgt über die beiden Registrierungsarrays ```javascript arrayList ``` und ```javascript topicList ```.
+Die Anzeigenamen der Themengebiete und die Zuordnung zu ihren jeweiligen Arrays erfolgt über die beiden Registrierungsarrays ``` arrayList ``` und ``` topicList ```.
 
 **Achtung: Für die korrekte Zuordnung ist es wichtig, dass jeweils zusammengehörende Bezeichner dieselben Indizes haben, d.h. sie müssen an derselben Stelle im jew. Array stehen.**
 
