@@ -69,11 +69,11 @@ const optics = [
 		["Wellenlänge", "&lambda;", "1 m"]
 		];
 
-/* NACHFOLGENDEN ABSCHNITT NICHT ÄNDERN! 
+/* NACHFOLGENDEN ABSCHNITT NICHT ÄNDERN!
  * DO NOT ALTER HE FOLLOWING PART!
  */
 
-if (topicList!=arrayList) {
+if (topicList.length != arrayList.length) {
 	alert("Fehler: topicList und arrayList haben verschieden viele Elemente!\nBitte contentdb.js prüfen!");
 	document.write("<h1>Fehler</h1>topicList und arrayList haben verschieden viele Elemente!<br />Bitte contentdb.js prüfen!");
 }
