@@ -9,13 +9,22 @@
 	<script type="text/javascript" src="contentdb.js">
 	</script>
 <script type="text/javascript">
+var templateFieldsetEntry = '\n<div>\n<input type="checkbox" id="{0}" name="branch" value="{0}" onchange="updateContentDB()">\n<label for="{0}">{1}</label>\n</div>';
 var contentdb;
 
 function getRandom(min, max) { // Snippet von developer.mozilla.org
 	min = Math.ceil(min);
 	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min +1)) + min; 
+	return Math.floor(Math.random() * (max - min +1)) + min;
 };
+
+String.prototype.format = function () { // Snippet von StackOverflow / https://jsfiddle.net/mitma/w7bcdqLj
+    var str = this;
+    for (var i = 0; i < arguments.length; i++) {
+        str = str.replace('{' + i + '}', arguments[i]);
+    }
+    return str;
+}
 
 function updateMathContent(s) {
 	var math = MathJax.Hub.getAllJax("mathdiv")[0];
@@ -82,12 +91,23 @@ function toggleVisible(objID, caller, doHide=0) {
 
 function updateContentDB() {
 	contentdb = [];
-	var gebiete = ["basicSI", "thermodyn", "mechanics", "electrics", "nuclear", "acoustics", "optics"];
-	for (i = 0; i < gebiete.length; i++) {
-		var bereichsCheckbox = document.getElementById(gebiete[i]);
+	for (i = 0; i < arrayList.length; i++) {
+		var bereichsCheckbox = document.getElementById(arrayList[i]);
 		if (bereichsCheckbox.checked) {
-			contentdb = contentdb.concat(eval(gebiete[i]));
+			contentdb = contentdb.concat(eval(arrayList[i]));
 		};
+	};
+};
+
+function initFieldset() {
+	var numEntries = topicList.length;
+	var fieldset = document.getElementById("themenFieldset");
+	for(i=0; i < numEntries; i++) {
+		var tmpID = arrayList[i];
+		var tmpTopic = topicList[i];
+		fieldset.innerHTML.concat(templateFieldsetEntry.format(tmpID, tmpTopic));
+		console.log(templateFieldsetEntry)
+		console.log(templateFieldsetEntry.format(tmpID, tmpTopic))
 	};
 };
 </script>
@@ -195,7 +215,7 @@ a:hover {
 </div>
 
 <form id="themenbereich">
-	<fieldset>
+	<fieldset id="themenFieldset">
 		<legend>Themenbereiche auswählen</legend>
 		<div>
 			<input type="checkbox" id="basicSI" name="branch" value="basicSI" onchange="updateContentDB()">
