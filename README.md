@@ -15,7 +15,7 @@ Die Seite fragt Größen, Formelzeichen und die zugehörigen Einheiten und Werte
 
 ## Anpassung der Inhalte
 
-**Achtung:** _In contentdb.js können bisher keine zusätzlichen Themenbereiche eingegeben oder ihre Namen geändert werden! Änderung der Arraynamen führt dazu, dass die Seite nicht mehr korrekt funktioniert!_
+**Achtung:** _Für die Änderung der Themengebiete Abschnitt "Anpassung der Themengebiete" beachten! Anderweitige Änderung der Arraynamen und der beiden Registrierungsarrays _arrayList_ und _topicList_ führt dazu, dass die Seite nicht mehr korrekt funktioniert!_
 
 Die Inhalte werden aus der Datei contentdb.js entnommen. Diese kann ggf. angepasst werden, die jeweiligen Themenbereiche sind englisch bezeichnet.
 
@@ -45,3 +45,28 @@ Damit eine Lücke zwischen dem Einheitensymbol und einer eventuellen Angabe des 
 ```
 einzugeben, was dem LaTeX-Befehl \\, entspricht.
 
+## Anpassung der Themengebiete
+
+Die Anzeigenamen der Themengebiete und die Zuordnung zu ihren jeweiligen Arrays erfolgt über die beiden Registrierungsarrays ``` arrayList ``` und ``` topicList ```.
+
+**Achtung: Für die korrekte Zuordnung ist es wichtig, dass jeweils zusammengehörende Bezeichner dieselben Indizes haben, d.h. sie müssen an derselben Stelle im jew. Array stehen.**
+
+Um ein Themengebiet hinzuzufügen, ist zunächst ein Array für das neue Themengebiet anzulegen:
+```javascript
+neuesThema = [
+		["Wuppdizität", "w", "1 Yi"]
+		];
+```
+
+Anschließend muss das neue Themengebiet in den beiden Registrierungarrays eingetragen werden.
+Vorher:
+```javascript
+arrayList = ["forst", "teilchen"];
+topicList = ["Forstwissenschaft", "Teilchenphysik"];
+```
+
+Nachher:
+```javascript
+arrayList = ["forst", "teilchen", "neuesThema"];
+topicList = ["Forstwissenschaft", "Teilchenphysik", "Neues Thema"];
+```
