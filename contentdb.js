@@ -70,7 +70,7 @@ const optics = [
 		];
 
 /* NACHFOLGENDEN ABSCHNITT NICHT ÄNDERN!
- * DO NOT ALTER HE FOLLOWING PART!
+ * DO NOT ALTER THE FOLLOWING PART!
  */
 
 if (topicList.length != arrayList.length) {
