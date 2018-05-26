@@ -9,7 +9,7 @@ const basicSI = [
 		["Lichtgeschwindigkeit", "c<sub>0</sub>", "299.792.458 \\frac{m}{s} \\approx 300.000 \\frac{km}{s}"],
 		];
 
-const thermodynamics = [
+const thermodyn = [
 		["absolute Temperatur", "T", "1 K \\, \\textrm{(Kelvin)}"],
 		["Celsius-Temperatur", "&theta;, &#977;", "1 °C \\, \\textrm{(Grad Celsius)}"],
 		["Leistung, Energiestrom", "P", "1 \\frac{J}{s} = 1 V \\cdot A = 1 W \\textrm{(Watt)}"],
